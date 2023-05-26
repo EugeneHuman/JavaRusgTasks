@@ -1,21 +1,20 @@
 package Lesson8;
 
-/*У класса Human должны быть поля имя (String), пол (boolean), возраст (int), дети (ArrayList<Human>).
-Создай объекты и заполни их так, чтобы получилось: два дедушки, две бабушки, отец, мать, трое детей.
-Выведи все объекты Human на экран (Подсказка: используй метод toString() класса Human).*/
-
+/*РЈ РєР»Р°СЃСЃР° Human РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РїРѕР»СЏ РёРјСЏ (String), РїРѕР» (boolean), РІРѕР·СЂР°СЃС‚ (int), РґРµС‚Рё (ArrayList<Human>).
+РЎРѕР·РґР°Р№ РѕР±СЉРµРєС‚С‹ Рё Р·Р°РїРѕР»РЅРё РёС… С‚Р°Рє, С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёР»РѕСЃСЊ: РґРІР° РґРµРґСѓС€РєРё, РґРІРµ Р±Р°Р±СѓС€РєРё, РѕС‚РµС†, РјР°С‚СЊ, С‚СЂРѕРµ РґРµС‚РµР№.
+Р’С‹РІРµРґРё РІСЃРµ РѕР±СЉРµРєС‚С‹ Human РЅР° СЌРєСЂР°РЅ (РџРѕРґСЃРєР°Р·РєР°: РёСЃРїРѕР»СЊР·СѓР№ РјРµС‚РѕРґ toString() РєР»Р°СЃСЃР° Human).*/
 
 import java.util.ArrayList;
 
 
 public class Human {
-    //напишите тут ваш код
+    //Г­Г ГЇГЁГёГЁГІГҐ ГІГіГІ ГўГ Гё ГЄГ®Г¤
     String name;
     boolean sex;
     int age;
     ArrayList<Human> children;
 
-    // передаем varargs в параметры конструктора
+    // РїРµСЂРµРґР°РµРј varargs РІ РїР°СЂР°РјРµС‚СЂС‹ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
     public Human(String name, boolean sex, int age, Human... children) {
         this.name = name;
         this.sex = sex;
@@ -28,7 +27,7 @@ public class Human {
     }
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        //Г­Г ГЇГЁГёГЁГІГҐ ГІГіГІ ГўГ Гё ГЄГ®Г¤
         ArrayList<Human> children = new ArrayList<>();
         ArrayList<Human> peoples = new ArrayList<>();
 
@@ -42,7 +41,7 @@ public class Human {
         Human grandMother1 = new Human("Babushka1", false, 56, father);
         Human grandMother2 = new Human("Babushka2", false, 56, mother);
 
-//      добавляем в массив
+//      Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Гў Г¬Г Г±Г±ГЁГў
         children.add(father);
         children.add(mother);
         children.add(child1);
@@ -68,13 +67,13 @@ public class Human {
 
     public String toString() {
         String text = "";
-        text += "Имя: " + this.name;
-        text += ", пол: " + (this.sex ? "мужской" : "женский");
-        text += ", возраст: " + this.age;
+        text += "Г€Г¬Гї: " + this.name;
+        text += ", ГЇГ®Г«: " + (this.sex ? "Г¬ГіГ¦Г±ГЄГ®Г©" : "Г¦ГҐГ­Г±ГЄГЁГ©");
+        text += ", ГўГ®Г§Г°Г Г±ГІ: " + this.age;
 
         int childCount = this.children.size();
         if (childCount > 0) {
-            text += ", дети: " + this.children.get(0).name;
+            text += ", Г¤ГҐГІГЁ: " + this.children.get(0).name;
 
             for (int i = 1; i < childCount; i++) {
                 Human child = this.children.get(i);
