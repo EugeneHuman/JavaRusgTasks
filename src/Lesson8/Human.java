@@ -4,17 +4,18 @@ package Lesson8;
 Создай объекты и заполни их так, чтобы получилось: два дедушки, две бабушки, отец, мать, трое детей.
 Выведи все объекты Human на экран (Подсказка: используй метод toString() класса Human).*/
 
+
 import java.util.ArrayList;
 
 
 public class Human {
-    //íàïèøèòå òóò âàø êîä
+    //�������� ��� ��� ���
     String name;
     boolean sex;
     int age;
     ArrayList<Human> children;
 
-    // передаем varargs в параметры конструктора
+    // �������� varargs � ��������� ������������
     public Human(String name, boolean sex, int age, Human... children) {
         this.name = name;
         this.sex = sex;
@@ -27,7 +28,7 @@ public class Human {
     }
 
     public static void main(String[] args) {
-        //íàïèøèòå òóò âàø êîä
+        //�������� ��� ��� ���
         ArrayList<Human> children = new ArrayList<>();
         ArrayList<Human> peoples = new ArrayList<>();
 
@@ -41,7 +42,7 @@ public class Human {
         Human grandMother1 = new Human("Babushka1", false, 56, father);
         Human grandMother2 = new Human("Babushka2", false, 56, mother);
 
-//      äîáàâëÿåì â ìàññèâ
+//      ��������� � ������
         children.add(father);
         children.add(mother);
         children.add(child1);
@@ -67,13 +68,13 @@ public class Human {
 
     public String toString() {
         String text = "";
-        text += "Èìÿ: " + this.name;
-        text += ", ïîë: " + (this.sex ? "ìóæñêîé" : "æåíñêèé");
-        text += ", âîçðàñò: " + this.age;
+        text += "���: " + this.name;
+        text += ", ���: " + (this.sex ? "�������" : "�������");
+        text += ", �������: " + this.age;
 
         int childCount = this.children.size();
         if (childCount > 0) {
-            text += ", äåòè: " + this.children.get(0).name;
+            text += ", ����: " + this.children.get(0).name;
 
             for (int i = 1; i < childCount; i++) {
                 Human child = this.children.get(i);
